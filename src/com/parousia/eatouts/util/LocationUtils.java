@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package com.parousia.eatouts;
+package com.parousia.eatouts.util;
+
+import com.parousia.eatouts.R;
 
 import android.content.Context;
 import android.location.Location;

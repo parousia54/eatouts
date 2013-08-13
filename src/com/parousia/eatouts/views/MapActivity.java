@@ -1,22 +1,26 @@
-package com.parousia.eatouts;
+package com.parousia.eatouts.views;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
@@ -28,8 +32,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.parousia.eatouts.R;
+import com.parousia.eatouts.settings.SettingsActivity;
+import com.parousia.eatouts.util.LocationUtils;
 
-public class MapActivity extends FragmentActivity implements
+public class MapActivity extends Screen implements
 		ConnectionCallbacks, OnConnectionFailedListener, LocationListener {
 
 	private static final long MIN_TIME = 400;
@@ -61,8 +68,8 @@ public class MapActivity extends FragmentActivity implements
 		// Set the interval ceiling to one minute
 		mLocationRequest
 				.setFastestInterval(LocationUtils.FAST_INTERVAL_CEILING_IN_MILLISECONDS);
-		
-		mAddressBar = (TextView)findViewById(R.id.addressbar);
+
+		mAddressBar = (TextView) findViewById(R.id.addressbar);
 
 	}
 
@@ -113,7 +120,8 @@ public class MapActivity extends FragmentActivity implements
 				"Loaction Changed -" + location.getLatitude() + ", "
 						+ location.getLongitude());
 		CameraPosition cameraPosition = new CameraPosition.Builder()
-				.target(new LatLng(location.getLatitude(), location.getLongitude())) // Sets the
+				.target(new LatLng(location.getLatitude(), location
+						.getLongitude())) // Sets the
 				// center of
 				// the map
 				// to
@@ -125,7 +133,7 @@ public class MapActivity extends FragmentActivity implements
 				.build(); // Creates a CameraPosition from the builder
 		mMap.animateCamera(CameraUpdateFactory
 				.newCameraPosition(cameraPosition));
-		
+
 		(new MapActivity.GetAddressTask(this)).execute(location);
 
 	}
@@ -144,8 +152,7 @@ public class MapActivity extends FragmentActivity implements
 	public void onDisconnected() {
 		// Do nothing
 	}
-	
-	
+
 	protected class GetAddressTask extends AsyncTask<Location, Void, String> {
 
 		// Store the context passed to the AsyncTask when the system

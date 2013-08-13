@@ -1,4 +1,4 @@
-package com.parousia.eatouts;
+package com.parousia.eatouts.views;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,21 +18,24 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
+import com.parousia.eatouts.R;
+import com.parousia.eatouts.util.LocationUtils;
+import com.parousia.eatouts.util.SharedPrefUtil;
 
-public class LandingActivity extends FragmentActivity implements
+public class LandingActivity extends Screen implements
 		LocationListener, GooglePlayServicesClient.ConnectionCallbacks,
 		GooglePlayServicesClient.OnConnectionFailedListener {
 
@@ -97,8 +100,9 @@ public class LandingActivity extends FragmentActivity implements
 		mUpdatesRequested = false;
 
 		// Open Shared Preferences
-		mPrefs = getSharedPreferences(LocationUtils.SHARED_PREFERENCES,
-				Context.MODE_PRIVATE);
+//		mPrefs = getSharedPreferences(LocationUtils.SHARED_PREFERENCES,
+//				Context.MODE_PRIVATE);
+		mPrefs = SharedPrefUtil.getPrefs(this);
 
 		// Get an editor
 		mEditor = mPrefs.edit();
