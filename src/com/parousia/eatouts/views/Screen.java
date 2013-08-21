@@ -1,13 +1,7 @@
 package com.parousia.eatouts.views;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
 import com.parousia.eatouts.R;
+import com.parousia.eatouts.control.EatOutsLocationManager;
 import com.parousia.eatouts.settings.SettingsActivity;
 
 public class Screen extends SherlockFragmentActivity{
@@ -16,6 +10,7 @@ public class Screen extends SherlockFragmentActivity{
 	SharedPreferences eatOutsPrefs;
 	SharedPreferences.Editor eatOutsPrefsEditor;
 	
+	private EatOutsLocationManager locationManager;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -47,5 +42,13 @@ public class Screen extends SherlockFragmentActivity{
 
 		return super.onOptionsItemSelected(item);
 	}
+
+	public EatOutsLocationManager getLocationManager() {
+		return locationManager;
+	}
+	
+	
+	
+	
 
 }

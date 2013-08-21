@@ -1,6 +1,6 @@
 package com.parousia.eatouts.settings;
 
-import com.parousia.eatouts.util.SharedPrefUtil;
+import com.parousia.eatouts.control.SharedPrefencesManager;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -22,7 +22,7 @@ public class SettingsActivity extends PreferenceActivity implements
 
 		getFragmentManager().beginTransaction()
 				.replace(android.R.id.content, new SettingsFragment()).commit();
-		mPrefs = SharedPrefUtil.getPrefs(this);
+		mPrefs = SharedPrefencesManager.getPrefs(this);
 		mEditor = mPrefs.edit();
 		
 		ListPreference homeScreenLayoutChooser = (ListPreference) findPreference("home_sreen_view_type");

@@ -1,0 +1,84 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:3494), pid=9816, tid=8540
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 6.0_31-b05
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.6-b01 mixed mode windows-amd64 compressed oops)
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000001ec000):  JavaThread "Unknown thread" [_thread_in_vm, id=8540, stack(0x0000000002530000,0x0000000002630000)]
+
+Stack: [0x0000000002530000,0x0000000002630000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000001ec000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=8540, stack(0x0000000002530000,0x0000000002630000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042f000 	C:\Java\jre6\bin\javaw.exe
+0x0000000077ca0000 - 0x0000000077e49000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077a80000 - 0x0000000077b9f000 	C:\Windows\system32\kernel32.dll
+0x000007fefdbb0000 - 0x000007fefdc1b000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe460000 - 0x000007fefe53b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefe140000 - 0x000007fefe1df000 	C:\Windows\system32\msvcrt.dll
+0x000007fefff90000 - 0x000007fefffaf000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefed40000 - 0x000007fefee6d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077ba0000 - 0x0000000077c9a000 	C:\Windows\system32\USER32.dll
+0x000007fefe3f0000 - 0x000007fefe457000 	C:\Windows\system32\GDI32.dll
+0x000007fefe540000 - 0x000007fefe54e000 	C:\Windows\system32\LPK.dll
+0x000007fefe970000 - 0x000007fefea39000 	C:\Windows\system32\USP10.dll
+0x000007fefed10000 - 0x000007fefed3e000 	C:\Windows\system32\IMM32.DLL
+0x000007feffe80000 - 0x000007fefff89000 	C:\Windows\system32\MSCTF.dll
+0x000007fefda60000 - 0x000007fefda7f000 	C:\Windows\system32\nvinitx.dll
+0x000000006d800000 - 0x000000006dfb8000 	C:\Java\jre6\bin\server\jvm.dll
+0x000007fefa720000 - 0x000007fefa75b000 	C:\Windows\system32\WINMM.dll
+0x000000006d770000 - 0x000000006d77e000 	C:\Java\jre6\bin\verify.dll
+0x000000006d3b0000 - 0x000000006d3d7000 	C:\Java\jre6\bin\java.dll
+0x000000006d7c0000 - 0x000000006d7d2000 	C:\Java\jre6\bin\zip.dll
+0x0000000077e70000 - 0x0000000077e77000 	C:\Windows\system32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 -Xbootclasspath:C:\Java\adt-bundle-windows-x86_64\sdk\platforms\android-18\android.jar;C:\Java\adt-bundle-windows-x86_64\sdk\add-ons\addon-google_apis-google-18\libs\effects.jar;C:\Java\adt-bundle-windows-x86_64\sdk\add-ons\addon-google_apis-google-18\libs\usb.jar;C:\Java\adt-bundle-windows-x86_64\sdk\add-ons\addon-google_apis-google-18\libs\maps.jar 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 53276 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -test GooglePlacesAPITest:testGooglePlacesAPIResponseParse
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Java\jdk1.6.0_31
+JRE_HOME=C:\Java\jre6\
+CLASSPATH=.;C:\Program Files (x86)\Java\jre7\lib\ext\QTJava.zip
+PATH=C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files\WIDCOMM\Bluetooth Software\;c:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Microsoft SQL Server\90\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\90\DTS\Binn\;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Java\android-sdk-windows\platform-tools;C:\Java\adt-bundle-windows-x86_64\sdk\platform-tools;C:\Java\apache-ant-1.8.3\bin;C:\Java\apache-tomcat-6.0.35\bin;C:\mongodb-win32-x86_64-2.0.5\bin;C:\Java\apache-maven-3.0.4\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Google\google_appengine\
+USERNAME=Rajesh
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 6019660k(1413592k free), swap 12037460k(6471360k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.6-b01) for windows-amd64 JRE (1.6.0_31-b05), built on Feb  3 2012 18:34:57 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Fri Aug 16 21:08:59 2013
+elapsed time: 0 seconds
+
